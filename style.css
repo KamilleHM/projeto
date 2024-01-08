@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-color: whitesmoke;
+    --bg-url: url(assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.05);
+    --hightlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(assets/moon-stars.svg);
+}
+
+.light{
+    --text-color:black;
+    --bg-url: url(assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5) ;
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --hightlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(assets/sun.svg);
+}
+
+
+body{
+    /* background-image: url(assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; */
+    /* Posso fazer todos eles em uma unica linha (shorthand/atalho) */
+    /* background: color image repeat position/size */
+    background: var(--bg-url) no-repeat top center/cover;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container
+{
+    width: 360px;
+    margin: auto;
+    margin-top: 56px;
+}
+
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img{
+    width: 112px;
+    margin: auto;
+    /* display: block; ou o text-align no profile*/
+}
+
+#profile p{
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* Switch */
+#switch{
+    position: relative; /*O position: relative, vai relativizar o absoluto (o absoluto vai ser relativo a esse elemento switch, o que permite colocar onde quiser dentro do switch, top, bottom, left, rigth, tudo dentro da caixa do switch)*/
+    width: 64px; /*Reajusta o tamanho para deixar no mesmo tamanho do spam*/
+    margin: 4px auto;
+}
+
+#switch button{
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute; /*Quando fala que o posicionamento é absoluto, imediatamente ele faz uma sobreposição de camadas (exemplo do predio e dos andares). Ele libera a propriedade z-index que muda os andares. Tambem libera outras propriedades como top, left rigth e bottom (significa que essa nova camada/andar, pode navegar em qualquer lugar da página, atraves das prorpiedades top left rigth bottom)*/
+    z-index: 1; /*Muda o "andar" daquele elemento.*/
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); /*Onde quer que fique no eixo y (vertical) */
+}
+
+.light #switch button{
+    right: 0;
+    left:initial
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    /* Sempre colocar o -webkit para poder rodar em todos os navegadores */
+    border-radius: 9999px;
+}
+
+/* links */
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /*Espaço entre os elementos*/
+    padding: 24px 0;
+}
+
+ul li a{
+    display: flex; /*Flex Cria uma linha virtual no meio do eixo principal*/
+    align-items: center; /*Alinha o conteudo bem no meio da linha que o flex criou*/
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s; /*Primeiro o que quer transicionar (qual propriedade) e dps em qnt tempo vai fazer a transição*/
+}
+
+ul li a:hover{
+    background: rgba(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+/* Social Links */
+#social-links{
+    display: flex;
+    padding: 24px 0;
+    font-size: 24px;
+    justify-content: center;
+}
+
+#social-links a{
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover{
+    background: var(--hightlight-color); 
+}
+
+footer{
+    padding: 24px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+footer a{
+    color: var(--text-color);
+}
