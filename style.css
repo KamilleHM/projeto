@@ -80,11 +80,15 @@ body{
     top: 50%;
     left: 0;
     transform: translateY(-50%); /*Onde quer que fique no eixo y (vertical) */
+    animation: slide-back 0.2s;
 }
 
 .light #switch button{
-    right: 0;
-    left:initial
+   animation: slide-in 0.2s forwards; /*primeiro o nome da animção criada e dps o tempo que vai levar para executar (ou seja aplica a animação qnd eu clicar no light). Esse ultimo é uma regra que fala para manter o for do atrule (vai fazer a animação do slide-in, que vai levar o left de 0  até 50% em 0.4s e qnd chegar no final vai manter as prorpiedades definidas no slide-in). Forwards mantem as prorpiedades finais*/
+}
+
+#switch button:hover{
+    outline: 8px solid var(--hightlight-color);
 }
 
 #switch span{
@@ -170,5 +174,23 @@ footer a{
 
     .light{
         --bg-url: url(assets/bg-desktop-light.jpg);
+    }
+}
+
+/* Animação */
+@keyframes slide-in{
+    from{
+        left:0;
+    }
+    to{
+        left:50%;
+    }
+}
+@keyframes slide-back{
+    from{
+        left:50%;
+    }
+    to{
+        left:0;
     }
 }
