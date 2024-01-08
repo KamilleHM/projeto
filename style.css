@@ -37,11 +37,11 @@ body{
     color: var(--text-color);
 }
 
-#container
-{
-    width: 360px;
-    margin: auto;
-    margin-top: 56px;
+#container{
+    width: 100%;
+    max-width: 588px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
 }
 
 #profile{
@@ -51,7 +51,7 @@ body{
 
 #profile img{
     width: 112px;
-    margin: auto;
+    /* margin: auto; */
     /* display: block; ou o text-align no profile*/
 }
 
