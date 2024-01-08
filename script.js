@@ -38,6 +38,6 @@ const person = {
 usando um objeto
 person.drive()*/
 
-
+// DESAFIO= Setar o atributo ALT com um novo texto (um pra qnd for light e outro pra qnd for normal)
 
 
