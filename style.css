@@ -52,6 +52,7 @@ body{
 
 #profile img{
     width: 112px;
+    border-radius: 50%;
     /* margin: auto; */
     /* display: block; ou o text-align no profile*/
 }

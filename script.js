@@ -17,10 +17,10 @@ function toggleMode(){
     //substituir a img
     if(html.classList.contains('light')){
     //se tiver light mode, adc a img light
-    img.setAttribute('src', 'assets/avatar-light.png') //P ajustar/modificar um atributo (primeiro o atributo que quer mudar, e dps o novo valor que eu quero)
+    img.setAttribute('src', 'assets/me1.jpg') //P ajustar/modificar um atributo (primeiro o atributo que quer mudar, e dps o novo valor que eu quero)
     } else{
     //se tiver sem light mode, manter a img normal
-    img.setAttribute('src', 'assets/avatar.png')
+    img.setAttribute('src', 'assets/me.jpeg')
     }
 }
 
